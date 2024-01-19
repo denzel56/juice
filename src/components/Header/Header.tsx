@@ -1,9 +1,10 @@
-import { FC, MouseEvent, ReactNode, useState } from "react";
 import cn from "classnames";
-import Logo from "../../assets/logo.svg";
+import { FC, MouseEvent, ReactNode, useState } from "react";
 import DarkLogo from "../../assets/dark_logo.svg";
+import Logo from "../../assets/logo.svg";
 import Line from "../Line";
 
+import { Link } from "react-router-dom";
 import s from "./style.module.scss";
 const Header: FC = (): ReactNode => {
   const [logo, setLogo] = useState(false);
@@ -25,11 +26,13 @@ const Header: FC = (): ReactNode => {
           onMouseOver={handleLogoHover}
           onMouseOut={handleLogoHover}
         >
-          {logo ? (
-            <img src={DarkLogo} alt="logo" />
-          ) : (
-            <img src={Logo} alt="logo" />
-          )}
+          <Link to={"/"}>
+            {logo ? (
+              <img src={DarkLogo} className={s.logo} alt="logo" />
+            ) : (
+              <img src={Logo} className={s.logo} alt="logo" />
+            )}
+          </Link>
         </div>
 
         <nav className={s.menu}>
@@ -40,18 +43,20 @@ const Header: FC = (): ReactNode => {
               onMouseOver={handleItemHover}
               onMouseOut={handleItemHover}
             >
-              <span
-                className={cn(s.itemTitle, {
-                  [s.itemTitleJuice]: juice,
-                })}
-              >
-                соки
-              </span>
-              <div
-                className={cn(s.round, {
-                  [s.itemRoundJuice]: juice,
-                })}
-              />
+              <Link to={"/juice"}>
+                <span
+                  className={cn(s.itemTitle, {
+                    [s.itemTitleJuice]: juice,
+                  })}
+                >
+                  соки
+                </span>
+                <div
+                  className={cn(s.round, {
+                    [s.itemRoundJuice]: juice,
+                  })}
+                />
+              </Link>
             </li>
             <li className={s.menuItem}>
               <span className={s.itemTitle}>миксы</span>
