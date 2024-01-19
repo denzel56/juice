@@ -1,0 +1,14 @@
+.logo {
+  display: block;
+  position: absolute;
+  top: 76px;
+  left: 75px;
+  width: 150px;
+  height: 165px;
+  background: url("../../assets/logo.svg");
+  z-index: 7;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

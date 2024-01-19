@@ -1,18 +1,13 @@
 import cn from "classnames";
 import { FC, MouseEvent, ReactNode, useState } from "react";
-import DarkLogo from "../../assets/dark_logo.svg";
-import Logo from "../../assets/logo.svg";
+
+import Logo from "../Logo";
 import Line from "../Line";
 
 import { Link } from "react-router-dom";
 import s from "./style.module.scss";
 const Header: FC = (): ReactNode => {
-  const [logo, setLogo] = useState(false);
   const [juice, setJuice] = useState(false);
-
-  const handleLogoHover = (e: MouseEvent) => {
-    e && setLogo(!logo);
-  };
 
   const handleItemHover = (e: MouseEvent) => {
     e && setJuice(!juice);
@@ -21,20 +16,6 @@ const Header: FC = (): ReactNode => {
   return (
     <>
       <div className={s.header}>
-        <div
-          className={s.logoWrap}
-          onMouseOver={handleLogoHover}
-          onMouseOut={handleLogoHover}
-        >
-          <Link to={"/"}>
-            {logo ? (
-              <img src={DarkLogo} className={s.logo} alt="logo" />
-            ) : (
-              <img src={Logo} className={s.logo} alt="logo" />
-            )}
-          </Link>
-        </div>
-
         <nav className={s.menu}>
           <div className={s.localWrap}></div>
           <ul className={s.menuWrap}>
@@ -89,7 +70,8 @@ const Header: FC = (): ReactNode => {
           </ul>
         </nav>
       </div>
-      <Line />
+      <Line position={5} />
+      <Logo />
     </>
   );
 };

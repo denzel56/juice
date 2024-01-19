@@ -1,10 +1,13 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 import s from "./style.module.scss";
 
-const Line: FC = (): ReactNode => {
+interface ILine {
+  position: number;
+}
+const Line = ({ position }: ILine): ReactNode => {
   return (
     <>
-      <div className={s.line} />
+      <div className={s.line} style={{ top: position }} />
     </>
   );
 };
