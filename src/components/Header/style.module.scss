@@ -1,52 +1,21 @@
 .header {
-  position: sticky;
+  position: relative;
+  // top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 149px;
-
-  .logoWrap {
-    position: relative;
-    top: 76px;
-    width: 150px;
-    height: 165px;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
+  background-color: #fff;
+  z-index: 7;
 
   .menu {
     width: 876px;
 
-    .menuWrap {
+    .menuWrap,
+    .pagesWrap {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
-      .menuItem {
-        list-style: none;
-
-        .round {
-          display: block;
-          margin: 0 auto;
-          width: 25px;
-          height: 25px;
-          background-color: #d9dada;
-          border-radius: 50%;
-        }
-
-        .itemTitleJuice {
-          color: #f29114;
-        }
-        .itemRoundJuice {
-          background-color: #f29114;
-        }
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
     }
   }
 }

@@ -1,76 +1,98 @@
-import cn from "classnames";
-import { FC, MouseEvent, ReactNode, useState } from "react";
+import { FC, ReactNode } from "react";
 
 import Logo from "../Logo";
 import Line from "../Line";
 
-import { Link } from "react-router-dom";
 import s from "./style.module.scss";
+import MenuItem from "../MenuItem";
+import PageItem from "../PageItem";
+
+const menuItems = [
+  {
+    title: "соки",
+    color: "#f29114",
+    url: "/juices",
+  },
+  {
+    title: "миксы",
+    color: "#fecf3d",
+    url: "/mixes",
+  },
+  {
+    title: "смузи",
+    color: "#f08aa8",
+    url: "/smoothies",
+  },
+  {
+    title: "ласси",
+    color: "#e5097f",
+    url: "/lassie",
+  },
+  {
+    title: "детокс",
+    color: "#ef7f1a",
+    url: "/detox",
+  },
+  {
+    title: "боулы",
+    color: "#ae4a84",
+    url: "/bowls",
+  },
+  {
+    title: "салаты",
+    color: "#009846",
+    url: "/salads",
+  },
+  {
+    title: "здоровая еда",
+    color: "#7bb933",
+    url: "/healthy",
+  },
+];
+
+const pageItems = [
+  {
+    title: "о нас",
+    url: "/about",
+  },
+  {
+    title: "франшиза",
+    url: "/franchise",
+  },
+  {
+    title: "контакты",
+    url: "/contacts",
+  },
+  {
+    title: "работа",
+    url: "/work",
+  },
+];
 const Header: FC = (): ReactNode => {
-  const [juice, setJuice] = useState(false);
-
-  const handleItemHover = (e: MouseEvent) => {
-    e && setJuice(!juice);
-  };
-
   return (
     <>
       <div className={s.header}>
         <nav className={s.menu}>
           <div className={s.localWrap}></div>
-          <ul className={s.menuWrap}>
-            <li
-              className={s.menuItem}
-              onMouseOver={handleItemHover}
-              onMouseOut={handleItemHover}
-            >
-              <Link to={"/juice"}>
-                <span
-                  className={cn(s.itemTitle, {
-                    [s.itemTitleJuice]: juice,
-                  })}
-                >
-                  соки
-                </span>
-                <div
-                  className={cn(s.round, {
-                    [s.itemRoundJuice]: juice,
-                  })}
+          <div className={s.menuWrap}>
+            {menuItems.map((item) => {
+              return (
+                <MenuItem
+                  title={item.title}
+                  color={item.color}
+                  url={item.url}
                 />
-              </Link>
-            </li>
-            <li className={s.menuItem}>
-              <span className={s.itemTitle}>миксы</span>
-              <div className={s.round} />
-            </li>
-            <li className={s.menuItem}>
-              <span className={s.itemTitle}>смузи</span>
-              <div className={s.round} />
-            </li>
-            <li className={s.menuItem}>
-              <span className={s.itemTitle}>ласси</span>
-              <div className={s.round} />
-            </li>
-            <li className={s.menuItem}>
-              <span className={s.itemTitle}>детокс</span>
-              <div className={s.round} />
-            </li>
-            <li className={s.menuItem}>
-              <span className={s.itemTitle}>боулы</span>
-              <div className={s.round} />
-            </li>
-            <li className={s.menuItem}>
-              <span className={s.itemTitle}>салаты</span>
-              <div className={s.round} />
-            </li>
-            <li className={s.menuItem}>
-              <span className={s.itemTitle}>здоровая еда</span>
-              <div className={s.round} />
-            </li>
-          </ul>
+              );
+            })}
+          </div>
+          <div className={s.pagesWrap}>
+            {pageItems.map((item) => {
+              return <PageItem title={item.title} />;
+            })}
+          </div>
         </nav>
       </div>
-      <Line position={5} />
+      <Line top={5} />
       <Logo />
     </>
   );

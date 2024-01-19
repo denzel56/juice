@@ -2,12 +2,13 @@ import { ReactNode } from "react";
 import s from "./style.module.scss";
 
 interface ILine {
-  position: number;
+  top?: number;
+  mt?: number;
 }
-const Line = ({ position }: ILine): ReactNode => {
+const Line = ({ top = 0, mt }: ILine): ReactNode => {
   return (
     <>
-      <div className={s.line} style={{ top: position }} />
+      <div className={s.line} style={{ top: top, marginTop: mt }} />
     </>
   );
 };

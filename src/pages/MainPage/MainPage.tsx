@@ -1,12 +1,15 @@
 import { FC, ReactNode } from "react";
 import { Carousel, CarouselSlide } from "@mantine/carousel";
-import { Image } from "@mantine/core";
+import { Image, Title } from "@mantine/core";
 
 import Header from "../../components/Header";
+import Line from "../../components/Line";
 import slide1 from "../../assets/USP.png";
 import slide2 from "../../assets/girl.png";
+import assortment from "../../assets/assortment.png";
+
 import s from "./style.module.scss";
-import Line from "../../components/Line";
+import Footer from "../../components/Footer";
 
 const MainPage: FC = (): ReactNode => {
   return (
@@ -20,7 +23,17 @@ const MainPage: FC = (): ReactNode => {
           <Image src={slide2} />
         </CarouselSlide>
       </Carousel>
-      <Line position={-5}/>
+      <Line top={-5} />
+      <Title order={1} className={s.productsTitle}>
+        наша продукция
+      </Title>
+      <Line top={5} />
+      <section className={s.products}>
+        <Image src={slide2} />
+        <Image src={assortment} />
+      </section>
+      <Line top={-5} />
+      <Footer />
     </>
   );
 };

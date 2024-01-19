@@ -1,0 +1,19 @@
+.pageItem {
+  height: 55px;
+  &_title {
+    color: #2b2a29;
+    text-transform: uppercase;
+  }
+  .round {
+    display: block;
+    margin: 0 auto;
+    width: 25px;
+    height: 25px;
+    background-color: #2b2a29;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
