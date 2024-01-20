@@ -6,6 +6,7 @@ import Line from "../Line";
 import s from "./style.module.scss";
 import MenuItem from "../MenuItem";
 import PageItem from "../PageItem";
+import UserLocation from "../UserLocation";
 
 const menuItems = [
   {
@@ -73,7 +74,9 @@ const Header: FC = (): ReactNode => {
     <>
       <div className={s.header}>
         <nav className={s.menu}>
-          <div className={s.localWrap}></div>
+          <div className={s.localWrap}>
+            <UserLocation />
+          </div>
           <div className={s.menuWrap}>
             {menuItems.map((item) => {
               return (

@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import s from "./style.module.scss";
-import { useNavigate } from "react-router-dom";
 
 interface IMenuItem {
   title: string;
@@ -14,35 +14,7 @@ const MenuItem = ({ title, color, url }: IMenuItem): ReactNode => {
   const navigate = useNavigate();
 
   const handleItemOver = () => {
-    switch (title) {
-      case "соки":
-        setItemColor(color);
-        break;
-      case "миксы":
-        setItemColor(color);
-        break;
-      case "смузи":
-        setItemColor(color);
-        break;
-      case "ласси":
-        setItemColor(color);
-        break;
-      case "детокс":
-        setItemColor(color);
-        break;
-      case "боулы":
-        setItemColor(color);
-        break;
-      case "салаты":
-        setItemColor(color);
-        break;
-      case "здоровая еда":
-        setItemColor(color);
-        break;
-      default:
-        setItemColor("#d9dada");
-        break;
-    }
+    setItemColor(color);
   };
   const handleItemOut = () => {
     setItemColor("");

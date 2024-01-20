@@ -1,15 +1,22 @@
 .header {
   position: relative;
   // top: 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   height: 149px;
   background-color: #fff;
   z-index: 7;
 
   .menu {
-    width: 876px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .menuWrap {
+      width: 876px;
+    }
+
+    .pageWrap {
+      width: 512px;
+    }
 
     .menuWrap,
     .pagesWrap {
