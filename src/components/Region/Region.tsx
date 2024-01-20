@@ -1,12 +1,12 @@
-import { ReactNode, useState } from "react";
 import cn from "classnames";
+import { ReactNode, useState } from "react";
 
 import s from "./style.module.scss";
 
 interface ILocation {
-  location?: string;
+  region?: string;
 }
-const UserLocation = ({ location = "ваш регион" }: ILocation): ReactNode => {
+const Region = ({ region = "ваш регион" }: ILocation): ReactNode => {
   const [hover, setHover] = useState(false);
 
   const handleItemOver = () => {
@@ -19,19 +19,19 @@ const UserLocation = ({ location = "ваш регион" }: ILocation): ReactNod
   return (
     <>
       <div
-        className={s.location}
+        className={s.region}
         onMouseOver={handleItemOver}
         onMouseOut={handleItemOut}
       >
         <div
-          className={cn(s.location_logo, {
-            [s.location_logoY]: hover,
+          className={cn(s.region_logo, {
+            [s.region_logoY]: hover,
           })}
         />
-        <div className={s.location_title}>{location}</div>
+        <div className={s.region_title}>{region}</div>
         <div
-          className={cn(s.location_arrow, {
-            [s.location_arrowY]: hover,
+          className={cn(s.region_arrow, {
+            [s.region_arrowY]: hover,
           })}
         />
       </div>
@@ -39,4 +39,4 @@ const UserLocation = ({ location = "ваш регион" }: ILocation): ReactNod
   );
 };
 
-export default UserLocation;
+export default Region;

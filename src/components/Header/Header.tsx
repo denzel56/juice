@@ -1,12 +1,14 @@
 import { FC, ReactNode } from "react";
 
-import Logo from "../Logo";
 import Line from "../Line";
+import Logo from "../Logo";
 
-import s from "./style.module.scss";
+import Basket from "../Basket";
+import Login from "../Login";
 import MenuItem from "../MenuItem";
 import PageItem from "../PageItem";
-import UserLocation from "../UserLocation";
+import Region from "../Region";
+import s from "./style.module.scss";
 
 const menuItems = [
   {
@@ -73,10 +75,13 @@ const Header: FC = (): ReactNode => {
   return (
     <>
       <div className={s.header}>
+        <div className={s.topNav}>
+          <Region />
+          <Basket />
+          <Login />
+        </div>
         <nav className={s.menu}>
-          <div className={s.localWrap}>
-            <UserLocation />
-          </div>
+          <div className={s.localWrap}></div>
           <div className={s.menuWrap}>
             {menuItems.map((item) => {
               return (

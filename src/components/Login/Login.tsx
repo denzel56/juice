@@ -1,12 +1,9 @@
-import { ReactNode, useState } from "react";
+import { FC, ReactNode, useState } from "react";
 import cn from "classnames";
 
 import s from "./style.module.scss";
 
-interface IBasket {
-  items?: number;
-}
-const Basket = ({ items = 0 }: IBasket): ReactNode => {
+const Login: FC = (): ReactNode => {
   const [hover, setHover] = useState(false);
 
   const handleItemOver = () => {
@@ -19,14 +16,14 @@ const Basket = ({ items = 0 }: IBasket): ReactNode => {
   return (
     <>
       <div
-        className={s.basket}
+        className={s.login}
         onMouseOver={handleItemOver}
         onMouseOut={handleItemOut}
       >
-        <div className={s.basket_title}>{`корзина (${items})`}</div>
+        <div className={s.login_title}>войти</div>
         <div
-          className={cn(s.basket_logo, {
-            [s.basket_logoY]: hover,
+          className={cn(s.login_logo, {
+            [s.login_logoY]: hover,
           })}
         />
       </div>
@@ -34,4 +31,4 @@ const Basket = ({ items = 0 }: IBasket): ReactNode => {
   );
 };
 
-export default Basket;
+export default Login;
