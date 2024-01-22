@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  height: 164px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6b9d52;
+  color: #fff;
+  text-transform: uppercase;
+
+  h1 {
+    margin: 0;
+    font-size: 80px;
+  }
+}
+
+.pageItems {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 30px;
+}
