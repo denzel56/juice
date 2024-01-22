@@ -1,0 +1,56 @@
+.product {
+  // width: 420px;
+  // height: 611px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+  border-radius: 50px;
+
+  &_name {
+    margin-top: 19px;
+    color: #2b2a29;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &_volume {
+    margin-top: 10px;
+    color: #797272;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &_price {
+    margin-top: 17px;
+    display: flex;
+    align-items: center;
+
+    &_value {
+      color: #2b2a29;
+      font-size: 40px;
+      text-transform: uppercase;
+    }
+
+    .like {
+      margin-left: 8px;
+    }
+  }
+
+  &_button {
+    width: 182px;
+    height: 52px;
+    margin-top: 27px;
+    background-color: #fecf3d;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

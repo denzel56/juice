@@ -1,0 +1,17 @@
+.menuItem {
+  &_title {
+    text-transform: uppercase;
+  }
+  .round {
+    display: block;
+    margin: 0 auto;
+    width: 25px;
+    height: 25px;
+    background-color: #d9dada;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

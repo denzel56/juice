@@ -1,0 +1,36 @@
+.region {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 9%;
+  width: 188px;
+  color: #2b2a29;
+  text-transform: uppercase;
+
+  &_logo {
+    display: block;
+    width: 27px;
+    height: 36px;
+    background: url("../../assets/noun.png");
+  }
+
+  &_logoY {
+    background: url("../../assets/nounY.png");
+  }
+
+  &_arrow {
+    display: block;
+    width: 12px;
+    height: 13px;
+    background: url("../../assets/noun_Next.svg");
+  }
+
+  &_arrowY {
+    background: url("../../assets/noun_NextY.svg");
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: #fecf3d;
+  }
+}

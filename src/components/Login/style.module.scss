@@ -1,0 +1,24 @@
+.login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 109px;
+  color: #2b2a29;
+  text-transform: uppercase;
+
+  &_logo {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: url("../../assets/sun.svg");
+  }
+
+  &_logoY {
+    background: url("../../assets/sunY.svg");
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: #fecf3d;
+  }
+}

@@ -1,0 +1,25 @@
+.basket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 175px;
+  margin-left: 40%;
+  color: #2b2a29;
+  text-transform: uppercase;
+
+  &_logo {
+    display: block;
+    width: 46px;
+    height: 46px;
+    background: url("../../assets/basket.svg");
+  }
+
+  &_logoY {
+    background: url("../../assets/basketY.svg");
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: #fecf3d;
+  }
+}

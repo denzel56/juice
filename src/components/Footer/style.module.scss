@@ -1,0 +1,41 @@
+.footer {
+  position: relative;
+  top: -8px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #6b9d52;
+
+  &_title {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 80px;
+  }
+
+  &_icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 329px;
+
+    &_wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 85px;
+      height: 85px;
+      border-radius: 20px;
+      background-color: #fff;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .icon {
+      display: block;
+      width: 52px;
+    }
+  }
+}
